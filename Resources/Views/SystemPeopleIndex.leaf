@@ -1,0 +1,22 @@
+#extend("base")
+<body>
+    <ul>
+        #for(person in systemPeople):
+        <li class="key">"firstname": <span class="value"> "#(person.firstname)"</span></li>
+        <li class="key">"lastname": <span class="value"> "#(person.lastname)"</span></li>
+        <li class="key">"ssn": <span class="value"> "#(person.ssn)"</span></li>
+        #if(person.gender == 0):
+            <li class="key">"gender": Unknown </li>
+        #elseif(person.gender == 1):
+            <li class="key">"gender": Male </li>
+        #elseif(person.gender == 2):
+            <li class="key">"gender": Female </li>
+        #elseif(person.gender == 3):
+            <li class="key">"gender": Other </li>
+        #else:
+            <li class="key">"gender": Not Available </li>
+        #endif
+        <li class="key">"email": <span class="value"> "#(person.email)"</span></li>
+        #endfor
+    </ul>
+</body>
